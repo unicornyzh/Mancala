@@ -86,6 +86,7 @@ class BoardState {
     private int moveInPitsA(int n, int fromMancala) {
         if (n != 0) {
             int marbleNumber = this.pitsA[n - 1];
+            this.pitsA[n-1]=0;
             int pitsLeft = BoardState.PITSNUMBER - n;
             if (marbleNumber <= pitsLeft) { // no marbles left to mancala and opposite pits
                 for (int i = n; i < n + marbleNumber; i++) {
@@ -123,6 +124,7 @@ class BoardState {
     private int moveInPitsB(int n, int fromMancala) {
         if (n != 0) {
             int marbleNumber = this.pitsB[n - 1];
+            this.pitsB[n-1]=0;
             int pitsLeft = BoardState.PITSNUMBER - n;
             if (marbleNumber <= pitsLeft) { // no marbles left to mancala and opposite pits
                 for (int i = n; i < n + marbleNumber; i++) {

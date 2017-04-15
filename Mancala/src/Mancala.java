@@ -5,8 +5,10 @@ public class Mancala {
     public static void main(String[] args){
         BoardState.PITSNUMBER=Integer.parseInt(args[0]);
         BoardState boardState=new BoardState();
-        Board board=new Board();
-        board.printBoard(boardState);
+        Board.printBoard(boardState);
+        boardState.updateMove(18,'a',0);
+        Board.printBoard(boardState);
+
     }
 
     /**
