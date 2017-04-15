@@ -10,7 +10,9 @@ public class Treenode {
     private int selfId;
     protected Treenode parentNode;
     protected List<Treenode> childList;
-
+    private int player;
+    private int pit;
+    private int marbles;;
     public Treenode() {
         initChildList();
     }
@@ -24,7 +26,24 @@ public class Treenode {
         initChildList();
         childList.add(cnode);
     }
-
+    
+    public Treenode findTreenodeById(int id) {  
+        if (this.selfId == id)  
+            return this;  
+        if (childList.isEmpty() || childList == null) {  
+            return null;  
+        } else {  
+            int childNumber = childList.size();  
+            for (int i = 0; i < childNumber; i++) {  
+                Treenode child = childList.get(i);  
+                Treenode resultNode = child.findTreenodeById(id);  
+                if (resultNode != null) {  
+                    return resultNode;  
+                }  
+            }  
+            return null;  
+        }  
+    }  
     public void initChildList(){
         if(childList==null)
             childList = new ArrayList<Treenode>();
@@ -91,4 +110,31 @@ public class Treenode {
     public void setParentNode(Treenode parentNode) {
         this.parentNode = parentNode;
     }
+    
+    public void setPlayer(int player)
+    {
+    	this.player=player;
+    }
+    
+    public int getPlayer()
+    {
+    	return this.player;
+    }
+    
+    public void setnumberofmarbles(int n,int marbles)
+    {
+    	this.pit=n;
+    	this.marbles=marbles;
+    }
+    
+    public int getpit()
+    {
+    	return this.pit;
+    }
+    
+    public int getmarbles()
+    {
+    	return marbles;
+    }
 }
+
