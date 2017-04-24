@@ -12,7 +12,7 @@ public class Treenode {
     protected List<Treenode> childList;
     private int player;
     private int pit;
-    private int marbles;;
+    private int marbles;
     public Treenode() {
         initChildList();
     }
